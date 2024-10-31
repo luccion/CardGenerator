@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="sidebar container">
+      <h2 class="body-text">📂<span id="totalCount">0</span> Cards Loaded.</h2>
+      <div id="card-list" class="card-list"></div>
+    </div>
+
+    <div class="content container">
+      <div id="rabbit">🐰</div>
+      <div class="content-head">
+        <div class="body-text content-head-left">
+          <h1 id="headTitle">✨Card Generator</h1>
+          <p>It take <span id="pagesReporter">0</span> page(s) to print all the cards.</p>
+        </div>
+        <div class="body-text content-head-right">
+          <p>Designed by Lunch</p>
+          <p><a class="external-link" href="mailto:lunch@whiteverse.com" target="_blank">Report issue</a></p>
+          <p><a class="external-link" href="https://whiteverse.com" target="_blank"> go to Whiteverse.com</a></p>
+        </div>
+      </div>
+      <div class="body-text" class="button-container">
+        <label for="file-upload" class="custom-file-upload">1.Select file.csv </label>
+        <input id="file-upload" type="file" style="display: none" onchange="handleFileUpload(event)" />
+        <button class="btn body-text" id="export-btn" onclick="exportToPDF()">2.Export to PDF <span id="loading-spinner" class="spinner" style="display: none"></span></button>
+      </div>
+      <div id="print-area">
+        <div id="card-container"></div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
